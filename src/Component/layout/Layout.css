@@ -1,0 +1,7 @@
+.app-layout { display:flex; flex-direction:column; min-height:100vh; font-family: system-ui, sans-serif; }
+.layout-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; background:#111; color:white; padding:0.85rem 1rem; }
+.layout-nav { display:flex; gap:0.75rem; }
+.layout-nav a { color:#ddd; text-decoration:none; font-size:0.9rem; }
+.layout-nav a.active { color:white; font-weight:700; }
+.layout-main { padding:1rem; flex:1; background:#f9f9f9; }
+.layout-footer { text-align:center; padding:0.75rem; background:#111; color:#fff; }
