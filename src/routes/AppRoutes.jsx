@@ -9,6 +9,7 @@ import About from '../pages/About'
 import Terms from '../pages/Terms'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
+import ForgotPassword from '../pages/ForgotPassword'
 import NotFound from '../pages/NotFound'
 
 export default function AppRoutes() {
@@ -24,6 +25,7 @@ export default function AppRoutes() {
         <Route path='terms' element={<Terms />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
+        <Route path='forgot-password' element={<ForgotPassword />} />
       </Route>
       <Route path='/404' element={<NotFound />} />
       <Route path='*' element={<Navigate replace to='/404' />} />
