@@ -1,1 +1,9 @@
-export default function Login() { return (<section><h1>Login</h1><p>Please login to continue.</p></section>); }
+import LoginForm from '../Component/auth/LoginForm'
+
+export default function Login() {
+	return (
+		<section className='page-wrap auth-wrap'>
+			<LoginForm />
+		</section>
+	)
+}
