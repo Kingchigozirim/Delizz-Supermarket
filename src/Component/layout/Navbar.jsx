@@ -1,6 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useCart } from '../../context/CartContext'
+<<<<<<< HEAD
 
 const categories = [
 	{ label: 'Cosmetics', value: 'cosmetics' },
@@ -12,6 +13,12 @@ const categories = [
 	{ label: 'Deodorants', value: 'deodorants' },
 	{ label: 'Teddies', value: 'teddies' },
 ]
+=======
+import categories from '../../data/categories'
+import products from '../../data/products'
+
+const featuredProduct = products[0]
+>>>>>>> a25fcbd6caddc34921f16fb43c9ce871bd7a1f43
 
 export default function Navbar() {
 	const navigate = useNavigate()
@@ -69,7 +76,11 @@ export default function Navbar() {
 				<nav className='layout-nav'>
 					<NavLink to='/' end className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
 					<NavLink to='/shop' className={({ isActive }) => (isActive ? 'active' : '')}>Shop</NavLink>
+<<<<<<< HEAD
 					<NavLink to='/product/apple-fuji' className={({ isActive }) => (isActive ? 'active' : '')}>
+=======
+					<NavLink to={`/product/${featuredProduct?.id ?? ''}`} className={({ isActive }) => (isActive ? 'active' : '')}>
+>>>>>>> a25fcbd6caddc34921f16fb43c9ce871bd7a1f43
 						Product
 					</NavLink>
 					<NavLink to='/about' className={({ isActive }) => (isActive ? 'active' : '')}>About</NavLink>
@@ -85,8 +96,13 @@ export default function Navbar() {
 							Select category
 						</option>
 						{categories.map((category) => (
+<<<<<<< HEAD
 							<option key={category.value} value={category.value}>
 								{category.label}
+=======
+							<option key={category.id} value={category.id}>
+								{category.name}
+>>>>>>> a25fcbd6caddc34921f16fb43c9ce871bd7a1f43
 							</option>
 						))}
 					</select>
