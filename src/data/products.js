@@ -1376,9 +1376,9 @@ const products = [
     category: "home-kitchen",
     price: 7000,
     salePrice: 6500,
-    image: "https://images.unsplash.com/photo-1550583724-b2695b3a4c6f?auto=format&fit=crop&w=900&q=80",
+    image: "https://assets.wsimgs.com/wsimgs/ab/images/dp/wcm/202546/0009/img67o.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1550583724-b2695b3a4c6f?auto=format&fit=crop&w=1200&q=80",
+      "https://assets.wsimgs.com/wsimgs/ab/images/dp/wcm/202546/0009/img67o.jpg",
     ],
     stock: "in-stock",
     sku: "NCC-HK-011",
