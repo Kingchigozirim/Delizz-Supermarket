@@ -153,7 +153,35 @@ const products = [
     stock: "in-stock",
     sku: "NCC-SONY-WH-1000XM4",
 
-  }
+  },
+  {
+    id: "nike-air-max-270",
+    name: "Nike Air Max 270",
+    description: "Nice and comfortable sneakers with a large air unit for cushioning and style.",
+    category: "Health & Beauty",
+    price: 15000,
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+    ],
+    stock: "in-stock",
+    sku: "NCC-NIKE-AIR-MAX-270",
+  },
+  {
+    id: "adidas-ultraboost-21",
+    name: "Adidas Ultraboost 21",
+    description: "High-performance running shoes with responsive cushioning and a sleek design.", 
+    category: "Health & Beauty",
+    price: 20000,
+    image:
+      "https://images.unsplash.com/photo-1543508304-b5487928a14b?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1543508304-b5487928a14b?auto=format&fit=crop&w=1200&q=80",
+    ],
+    stock: "in-stock",
+    sku: "NCC-ADIDAS-ULTRABOOST-21",
+  },
 ]
 
 export default products
