@@ -232,7 +232,7 @@
 
 .auth-form p {
 	margin: 0.25rem 0 0.7rem;
-	color: #555;
+	color: #555555;
 }
 
 .auth-form label {
@@ -255,7 +255,7 @@
 }
 
 .auth-links a {
-	color: #0f766e;
+	color: blue;
 	text-decoration: none;
 	font-size: 0.92rem;
 }

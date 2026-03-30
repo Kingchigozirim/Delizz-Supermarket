@@ -11,6 +11,12 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <div className='support-chat-floating' aria-label='Live support chat'>
+        <button type='button' className='chat-button' aria-label='Open live support chat'>
+          <span aria-hidden='true'>💬</span>
+        </button>
+        <span className='chat-tooltip'>Live Support</span>
+      </div>
     </div>
   )
 }
