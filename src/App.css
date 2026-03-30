@@ -38,12 +38,12 @@
 }
 
 .btn-primary {
-	background: #0f766e;
+	background: blue;
 	color: #fff;
 }
 
 .btn-primary:hover {
-	background: #0d5f59;
+	background: blue;
 }
 
 .btn-outline {
