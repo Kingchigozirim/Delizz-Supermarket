@@ -83,9 +83,7 @@ export default function Navbar() {
 					<NavLink to={`/product/${featuredProduct?.id ?? ''}`} className={({ isActive }) => (isActive ? 'active' : '')}>
 						Product
 					</NavLink>
-					<NavLink to='/about' className={({ isActive }) => (isActive ? 'active' : '')}>
-						About
-					</NavLink>
+					
 					<NavLink to='/terms' className={({ isActive }) => (isActive ? 'active' : '')}>
 						Terms
 					</NavLink>
