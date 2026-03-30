@@ -1,1 +1,20 @@
-export default function Home() { return (<section><h1>Home</h1><p>Welcome to your Delizz store.</p></section>); }
+import HeroSection from "../Component/home/HeroSection";
+import FlashSales from "../Component/home/FlashSales";
+import CategoryPreview from "../Component/home/CategoryPreview";
+import FeaturedProducts from "../Component/home/FeaturedProducts";
+import BestSelling from "../Component/home/BestSelling";
+import NewStock from "../Component/home/NewStock";
+import products from "../data/product";
+
+export default function Home() {
+  return (
+    <div className="home-page">
+      <HeroSection />
+      <FlashSales products={products.slice(0, 4)} />
+      <CategoryPreview />
+      <BestSelling products={products.slice(0, 4)} />
+      <FeaturedProducts products={products.slice(2, 6)} />
+      <NewStock products={products.slice(0, 4)} />
+    </div>
+  );
+}
