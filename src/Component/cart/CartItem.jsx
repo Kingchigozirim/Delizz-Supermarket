@@ -1,3 +1,11 @@
+function formatCurrency(value) {
+	return new Intl.NumberFormat('en-NG', {
+		style: 'currency',
+		currency: 'NGN',
+		maximumFractionDigits: 0,
+	}).format(value)
+}
+
 export default function CartItem({ item, onRemove, onQuantityChange }) {
 	const itemTotal = item.price * item.quantity
 
@@ -6,7 +14,7 @@ export default function CartItem({ item, onRemove, onQuantityChange }) {
 			<img className='cart-item-image' src={item.image} alt={item.name} />
 			<div className='cart-item-content'>
 				<h3>{item.name}</h3>
-				<p>${item.price.toFixed(2)} each</p>
+				<p>{formatCurrency(item.price)} each</p>
 			</div>
 			<div className='cart-item-controls'>
 				<label htmlFor={`qty-${item.id}`}>Qty</label>
@@ -18,7 +26,7 @@ export default function CartItem({ item, onRemove, onQuantityChange }) {
 					onChange={(event) => onQuantityChange(item.id, Number(event.target.value))}
 				/>
 			</div>
-			<div className='cart-item-total'>${itemTotal.toFixed(2)}</div>
+			<div className='cart-item-total'>{formatCurrency(itemTotal)}</div>
 			<button className='btn btn-danger' onClick={() => onRemove(item.id)}>
 				Remove
 			</button>

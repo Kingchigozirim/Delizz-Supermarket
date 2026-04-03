@@ -1,59 +1,114 @@
+:root {
+	--bg: #f1faf4;
+	--surface: #ffffff;
+	--surface-soft: #f5fbf5;
+	--border: #dde8dd;
+	--text: #0f172a;
+	--muted: #475569;
+	--brand: #1f7a23;
+	--brand-dark: #145c1a;
+	--accent: #ef4444;
+	--accent-soft: #fee2e2;
+	--shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+	font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
 .page-wrap {
-	max-width: 1100px;
+	max-width: 1120px;
 	margin: 0 auto;
 }
 
 .page-head {
-	margin-bottom: 1rem;
+	margin-bottom: 1.25rem;
 }
 
 .page-head h1 {
 	margin: 0;
-	font-size: 1.6rem;
+	font-size: clamp(1.75rem, 2vw, 2.75rem);
+	line-height: 1.05;
 }
 
 .page-head p {
-	margin-top: 0.3rem;
-	color: #555;
+	margin-top: 0.5rem;
+	color: var(--muted);
+	font-size: 1rem;
 }
 
 .card {
-	background: #fff;
-	border: 1px solid #e8e8e8;
-	border-radius: 14px;
-	box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 1.25rem;
+	box-shadow: var(--shadow);
 }
 
 .btn {
 	border: 1px solid transparent;
-	border-radius: 10px;
-	padding: 0.6rem 0.9rem;
+	border-radius: 999px;
+	padding: 0.8rem 1rem;
 	font-size: 0.95rem;
-	font-weight: 600;
+	font-weight: 700;
 	cursor: pointer;
 	text-decoration: none;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+	transform: translateY(-1px);
 }
 
 .btn-primary {
-	background: blue;
+	background: var(--brand);
 	color: #fff;
 }
 
 .btn-primary:hover {
-	background: blue;
+	background: var(--brand-dark);
+}
+
+.btn-secondary {
+	background: var(--surface);
+	color: var(--brand);
+	border-color: var(--brand);
 }
 
 .btn-outline {
-	border-color: #d4d4d8;
-	color: #111;
-	background: #fff;
+	border-color: var(--border);
+	color: var(--text);
+	background: var(--surface);
 }
 
 .btn-danger {
-	background: #b91c1c;
+	background: var(--accent);
 	color: #fff;
 }
 
@@ -64,47 +119,81 @@
 }
 
 .product-card {
+	position: relative;
 	overflow: hidden;
+	border-radius: 1.25rem;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	box-shadow: var(--shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 22px 50px rgba(15, 23, 42, 0.1);
 }
 
 .product-image {
 	width: 100%;
-	height: 170px;
+	height: 200px;
 	object-fit: cover;
 }
 
 .product-content {
-	padding: 0.9rem;
+	padding: 1rem;
 }
 
 .product-content h3 {
 	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.35;
 }
 
 .product-content p {
-	margin: 0.4rem 0 0.8rem;
-	color: #555;
+	margin: 0.625rem 0 1rem;
+	color: var(--muted);
+	font-size: 0.95rem;
 }
 
 .product-meta {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 0.8rem;
+	gap: 0.75rem;
+	margin-bottom: 1rem;
+}
+
+.product-meta strong {
+	color: var(--brand-dark);
+	font-size: 1rem;
 }
 
 .pill {
 	text-transform: capitalize;
 	font-size: 0.75rem;
-	padding: 0.2rem 0.55rem;
+	padding: 0.3rem 0.65rem;
 	border-radius: 999px;
-	background: #ecfeff;
-	color: #155e75;
+	background: var(--surface-alt);
+	color: var(--brand-dark);
+}
+
+.sale-pill {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	font-size: 0.7rem;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	padding: 0.35rem 0.75rem;
+	border-radius: 999px;
+	background: var(--accent);
+	color: #fff;
+	text-transform: uppercase;
 }
 
 .product-actions {
 	display: flex;
-	gap: 0.5rem;
+	gap: 0.65rem;
 	flex-wrap: wrap;
 }
 
@@ -123,7 +212,7 @@
 }
 
 .details-content {
-	padding: 1rem;
+	padding: 1.1rem;
 }
 
 .details-content h1 {
@@ -147,13 +236,16 @@
 	grid-template-columns: 84px 1fr auto auto auto;
 	gap: 0.8rem;
 	align-items: center;
-	padding: 0.7rem;
+	padding: 0.75rem;
+	border-radius: 1rem;
+	background: var(--surface);
+	border: 1px solid var(--border);
 }
 
 .cart-item-image {
 	width: 84px;
 	height: 84px;
-	border-radius: 10px;
+	border-radius: 14px;
 	object-fit: cover;
 }
 
@@ -164,7 +256,7 @@
 
 .cart-item-content p {
 	margin: 0.25rem 0 0;
-	color: #555;
+	color: var(--muted);
 }
 
 .cart-item-controls {
@@ -175,9 +267,9 @@
 
 .cart-item-controls input {
 	width: 72px;
-	padding: 0.4rem;
-	border: 1px solid #ddd;
-	border-radius: 8px;
+	padding: 0.45rem;
+	border: 1px solid #d9e2d7;
+	border-radius: 10px;
 }
 
 .cart-item-total {
@@ -189,6 +281,10 @@
 	height: fit-content;
 	position: sticky;
 	top: 1rem;
+	border-radius: 1rem;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	box-shadow: var(--shadow);
 }
 
 .cart-summary h2 {
@@ -198,19 +294,19 @@
 .summary-row {
 	display: flex;
 	justify-content: space-between;
-	margin: 0.55rem 0;
+	margin: 0.65rem 0;
 }
 
 .summary-total {
-	margin-top: 0.8rem;
-	padding-top: 0.8rem;
-	border-top: 1px solid #ececec;
+	margin-top: 0.85rem;
+	padding-top: 0.85rem;
+	border-top: 1px solid #e5e7eb;
 	font-weight: 700;
 }
 
 .cart-summary .btn {
 	width: 100%;
-	margin-top: 0.55rem;
+	margin-top: 0.65rem;
 }
 
 .auth-wrap {
@@ -220,10 +316,14 @@
 
 .auth-form {
 	width: min(100%, 460px);
-	padding: 1.2rem;
+	padding: 1.25rem;
 	display: flex;
 	flex-direction: column;
-	gap: 0.45rem;
+	gap: 0.6rem;
+	border-radius: 1rem;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow);
 }
 
 .auth-form h1 {
@@ -231,19 +331,19 @@
 }
 
 .auth-form p {
-	margin: 0.25rem 0 0.7rem;
-	color: #555555;
+	margin: 0.35rem 0 0.75rem;
+	color: var(--muted);
 }
 
 .auth-form label {
-	font-weight: 600;
-	font-size: 0.9rem;
+	font-weight: 700;
+	font-size: 0.95rem;
 }
 
 .auth-form input {
-	padding: 0.68rem 0.75rem;
-	border: 1px solid #ddd;
-	border-radius: 10px;
+	padding: 0.85rem 0.95rem;
+	border: 1px solid #d9e3d7;
+	border-radius: 0.95rem;
 	margin-bottom: 0.4rem;
 }
 
@@ -255,7 +355,7 @@
 }
 
 .auth-links a {
-	color: blue;
+	color: var(--brand);
 	text-decoration: none;
 	font-size: 0.92rem;
 }

@@ -2,9 +2,6 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useCart } from '../../context/CartContext'
 import categories from '../../data/categories'
-import products from '../../data/products'
-
-const featuredProduct = products[0]
 
 export default function Navbar() {
 	const navigate = useNavigate()
@@ -15,12 +12,7 @@ export default function Navbar() {
 		event.preventDefault()
 		const term = searchText.trim()
 
-		if (!term) {
-			navigate('/shop')
-			return
-		}
-
-		navigate(`/shop?search=${encodeURIComponent(term)}`)
+		navigate(term ? `/shop?search=${encodeURIComponent(term)}` : '/shop')
 	}
 
 	const handleCategoryChange = (event) => {
@@ -32,27 +24,24 @@ export default function Navbar() {
 
 	return (
 		<header className='layout-header'>
+			<div className='navbar-topbar'>
+				<p>Fresh groceries, daily essentials, and fast delivery across town.</p>
+				<div className='topbar-actions'>
+					<Link to='/shop'>Shop now</Link>
+					<Link to='/about'>About us</Link>
+				</div>
+			</div>
 
 			<div className='navbar-main'>
 				<Link className='logo' to='/' aria-label='Delizz homepage'>
 					<span className='logo-mark'>🛒</span>
-					<span>Delizz</span>
+					<span>Delizz Grocery</span>
 				</Link>
 
 				<form className='search-form' onSubmit={handleSearch}>
-					<div className='search-category'>
-						<select defaultValue=''>
-							<option value=''>All categories</option>
-							{categories.map((category) => (
-								<option key={category.id} value={category.id}>
-									{category.name}
-								</option>
-							))}
-						</select>
-					</div>
 					<input
 						type='search'
-						placeholder='Search products...'
+						placeholder='Search groceries, fruits, snacks...'
 						value={searchText}
 						onChange={(event) => setSearchText(event.target.value)}
 						aria-label='Search products'
@@ -64,10 +53,13 @@ export default function Navbar() {
 
 				<div className='navbar-icons'>
 					<Link to='/login' className='icon-link'>
-						<span>My account</span>
+						<span>Account</span>
 					</Link>
-					<Link to='/cart' className='icon-link'>
-						<span>Cart ({totals.itemCount})</span>
+					<Link to='/cart' className='icon-link cart-link' aria-label={`Cart with ${totals.itemCount} items`}>
+						<span className='cart-icon' aria-hidden='true'>🛒</span>
+						{totals.itemCount > 0 ? (
+							<span className='cart-badge'>{totals.itemCount}</span>
+						) : null}
 					</Link>
 				</div>
 			</div>
@@ -80,23 +72,11 @@ export default function Navbar() {
 					<NavLink to='/shop' className={({ isActive }) => (isActive ? 'active' : '')}>
 						Shop
 					</NavLink>
-					<NavLink to={`/product/${featuredProduct?.id ?? ''}`} className={({ isActive }) => (isActive ? 'active' : '')}>
-						Product
-					</NavLink>
 					
-					<NavLink to='/terms' className={({ isActive }) => (isActive ? 'active' : '')}>
-						Terms
-					</NavLink>
-					<NavLink to='/login' className={({ isActive }) => (isActive ? 'active' : '')}>
-						Login
-					</NavLink>
-					<NavLink to='/register' className={({ isActive }) => (isActive ? 'active' : '')}>
-						Register
-					</NavLink>
 				</nav>
 
 				<div className='category-picker'>
-					<label htmlFor='category-select'>Categories</label>
+					<label htmlFor='category-select'>Shop by category</label>
 					<select id='category-select' defaultValue='' onChange={handleCategoryChange}>
 						<option value='' disabled>
 							Select category

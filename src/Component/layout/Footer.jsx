@@ -5,19 +5,20 @@ export default function Footer() {
 		<footer className='layout-footer'>
 			<div className='footer-grid'>
 				<div>
-					<strong>About us</strong>
+					<strong>About Delizz</strong>
 					<p>
-						Delizz Supermarket Limited was inspired by the successful Cash and Carry operations in the UK, South Africa, and USA. We bring that convenience to Nigeria.
+						Delizz Grocery delivers fresh produce, pantry staples, and household essentials across the city.
+						Shop today for trusted brands, great prices, and fast local delivery.
 					</p>
 					<div className='social-icons'>
 						<a href='' target='_blank' rel='noreferrer'>Facebook</a>
 						<a href='' target='_blank' rel='noreferrer'>Instagram</a>
-						<a href=''>Email</a>
+						<a href='mailto:hello@delizz.com'>Email</a>
 					</div>
 				</div>
 
 				<div>
-					<strong>Help & Info</strong>
+					<strong>Customer care</strong>
 					<div className='footer-links'>
 						<Link to='/about'>About</Link>
 						<a href='#'>Our Stores</a>
@@ -27,28 +28,27 @@ export default function Footer() {
 				</div>
 
 				<div>
-					<strong>Coorperate</strong>
+					<strong>Policies</strong>
 					<div className='footer-links'>
-						<a href='#'>Track your order</a>
+						<a href='#'>Track Your Order</a>
 						<a href='#'>Privacy Policy</a>
-						<a href='#'>Term and Condition</a>
+						<a href='#'>Terms & Conditions</a>
 					</div>
 				</div>
 
 				<div>
-					<strong>Signup for Newsletter</strong>
-					<p>Subscribe to our newsletter and never miss out on our great deals.</p>
+					<strong>Newsletter</strong>
+					<p>Get weekly savings, fresh deals, and new arrivals delivered to your inbox.</p>
 					<form className='footer-newsletter-form'>
-						<input type='email' placeholder='Your Email' aria-label='Email for newsletter' />
-						<button type='submit'>Sign Up</button>
+						<input type='email' placeholder='Your email address' aria-label='Email for newsletter' />
+						<button type='submit'>Subscribe</button>
 					</form>
 				</div>
 			</div>
 
 			<div className='footer-bottom-row'>
-				
-			<p className='footer-bottom'>© {new Date().getFullYear()} Delizz Grocery. All rights reserved.</p>
-		</div>
+				<p className='footer-bottom'>© {new Date().getFullYear()} Delizz Grocery. All rights reserved.</p>
+			</div>
 		</footer>
 	)
 }

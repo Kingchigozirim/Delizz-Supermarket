@@ -46,13 +46,13 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
             className="h-72 w-full rounded-xl object-cover md:h-full"
           />
           <div className="space-y-4">
-            <p className="inline-flex rounded-full bg-red-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#d30f26]">
+            <p className="inline-flex rounded-full bg-green-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#145c1a]">
               Quick View
             </p>
             <h3 className="text-2xl font-bold text-slate-900">{product.name}</h3>
             <p className="text-sm leading-6 text-slate-600">{product.description}</p>
             <div className="flex items-center gap-3">
-              <p className="text-2xl font-extrabold text-[#d30f26]">{formatCurrency(displayPrice)}</p>
+              <p className="text-2xl font-extrabold text-[#145c1a]">{formatCurrency(displayPrice)}</p>
               {product.salePrice ? (
                 <p className="text-sm font-semibold text-slate-400 line-through">
                   {formatCurrency(product.price)}
@@ -65,7 +65,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                 addToCart({ ...product, price: displayPrice })
                 onClose()
               }}
-              className="rounded-md bg-[#d30f26] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#b70d20]"
+              className="rounded-md bg-[#1f7a23] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#145c1a]"
             >
               Add to cart
             </button>

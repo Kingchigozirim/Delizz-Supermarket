@@ -23,7 +23,7 @@ export default function ProductFilter({
           id="category"
           value={selectedCategory}
           onChange={(event) => onCategoryChange(event.target.value)}
-          className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 outline-none ring-red-200 transition focus:border-red-300 focus:ring-2"
+          className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 outline-none transition focus:border-[#1f7a23] focus:ring-2 focus:ring-[#d1fae5]"
         >
           <option value="all">All categories</option>
           {categories.map((category) => (
@@ -67,7 +67,7 @@ export default function ProductFilter({
       <button
         type="button"
         onClick={onReset}
-        className="w-full rounded-md border border-[#d30f26] px-3 py-2 text-sm font-semibold text-[#d30f26] transition hover:bg-red-50"
+        className="w-full rounded-md border border-[#1f7a23] px-3 py-2 text-sm font-semibold text-[#1f7a23] transition hover:bg-[#ecfdf5]"
       >
         Reset filters
       </button>
